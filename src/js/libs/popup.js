@@ -40,10 +40,12 @@ function popup() {
 
   $("." + $popupItem).each(function(){
     var $this = $(this);
-    if ($this.hasClass("." + $popupVisible + "")) {
+    if ($this.hasClass($popupVisible)) {
+      console.log('is visible');
       $this.wrap('<div class="'+ $popup + ' ' + $popupVisible +'"><div class="'+ $popupContainer +'">');
       bodyAddClass();
-      $this.removeClass("." + $popupVisible + "");
+      $this.removeClass($popupVisible);
+      console.log('is visible');
     } else {
       $this.wrap('<div class="'+ $popup +'"><div class="'+ $popupContainer +'">');
     }

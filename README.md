@@ -1,5 +1,5 @@
 # Popup
-My popup is very simple. I use it in my every project. Its main feature is that it is able to compute the length of your vertical scrollbar and prevents page bouncing when scrollbar is hidden and the popup is toggled.
+My popup is very simple. I use it in my every project. Its main feature is that it is able to compute the length of your vertical scrollbar and prevents page bouncing when scrollbar is hidden and the popup is toggled. Popup can be closed by clicking “close” button or hiting “ESC” key.
 
 ## Usage
 
