@@ -24,5 +24,5 @@ It order to toggle popup, you can use such a html markup:
 ```html
 <a href="#popup" class="open-popup">Open popup</a>
 ```
-<a href="https://sanijasi.github.io/popup/" target="_blank">Demo</a>
+<a href="https://sanijasi.github.io/popup/">Demo</a>
 
