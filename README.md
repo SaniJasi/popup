@@ -18,7 +18,7 @@ If you want to display popup on page load you should use following code:
 </div>
 ```
 ### Note:
-It's important to use **id**, since it is required for poup initialization and css modifications. That's it!
+It's important to use **id**, since it is required for popup initialization and css modifications. That's it!
 
 It order to toggle popup, you can use such a html markup:
 ```html
