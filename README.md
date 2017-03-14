@@ -10,6 +10,13 @@ Tou use the popup you need to add **jQuery**, **popup.js** and **popup.css** to 
   <a href="#" class="popup__close">x</a>  
 </div>
 ```
+If you want to display popup on page load you should use following code:
+```html
+<div class="popup is-visible" id="popup">
+  <h2>Awesome popup!</h2>
+  <a href="#" class="popup__close">x</a>  
+</div>
+```
 ### Note:
 It's important to ise **id**, since it is required for poup initialization and css modifications. That's it!
 

@@ -114,12 +114,12 @@ gulp.task('build:js', function () {
 //library js build
 gulp.task('build:libs', function () {
   gulp.src(path.src.js + '/libs/**/*.js')
-  .pipe(order([
-      'jquery.js',
-      'modernizr.js',
-      'slick.js'
-    ]))
-  .pipe(concat('libs.js'))
+  // .pipe(order([
+  //     'jquery.js',
+  //     'modernizr.js',
+  //     'slick.js'
+  //   ]))
+  //.pipe(concat('libs.js'))
   .pipe(uglify())
   .pipe(gulp.dest(path.dest.js))
   .pipe(reload({stream: true}));

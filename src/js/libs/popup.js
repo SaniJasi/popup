@@ -86,3 +86,5 @@ function popup() {
     bodyRemoveStyle();
   });
 }
+
+popup();
