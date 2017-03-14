@@ -1,15 +1,20 @@
 # Popup
-Мой попап очень прост. Я использую его в каждом своем проекте. Самый главный его плюс,он умеет считать ширину Вашего вертикального скролбара, что не дает странице смещаться, когда прячется скрол браузера и показывается мой попап.
-Для использования плагина вам необходимо подключить **jQuery** , **popup.js** и **popup.css**. Используем следующий код:
+My popup is very simple. I use it in my every project. Its main feature is that it is able to compute the length of your vertical scrollbar and prevents page bouncing when scrollbar is hidden and the popup is toggled.
+
+## Usage
+
+Tou use the popup you need to add **jQuery**, **popup.js** and **popup.css** to your application. It can be initialized like:
 ```html
 <div class="popup" id="popup">
   <h2>Awesome popup!</h2>
   <a href="#" class="popup__close">x</a>  
 </div>
 ```
-Важно использовать **ID**, он нам понадобиться для вызова и css модификаций. Вот и все!
-Для вызова попапа вам необходимо использовать такую html структуру
+### Note:
+It's important to ise **id**, since it is required for poup initialization and css modifications. That's it!
+
+It order to toggle popup, you can use such a html markup:
 ```html
-<a href="#popup" class="open-popup">Открыть попап</a>
+<a href="#popup" class="open-popup">Open popup</a>
 ```
 
