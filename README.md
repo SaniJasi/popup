@@ -1,2 +1,2 @@
-# popup
+# Popup
 Easy popup
