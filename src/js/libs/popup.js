@@ -22,11 +22,11 @@ function popup() {
   }
 
   function popupHide() {
-    $("." + $popup + "").fadeOut();
+    $("." + $popup).fadeOut();
   }
 
   function closePopup() {
-    $("." + $popupClose + "").trigger('click');
+    $("." + $popupClose).trigger('click');
   }
 
   function getScrollbarWidth() {
@@ -38,7 +38,7 @@ function popup() {
     return scrollbarSize;
   }
 
-  $("." + $popupItem + "").each(function(){
+  $("." + $popupItem).each(function(){
     var $this = $(this);
     if ($this.hasClass("." + $popupVisible + "")) {
       $this.wrap('<div class="'+ $popup + ' ' + $popupVisible +'"><div class="'+ $popupContainer +'">');
@@ -53,7 +53,7 @@ function popup() {
     console.log('init popop');
   });
 
-  $("." + $popupBg + "").on("touchstart click", function(e){
+  $("." + $popupBg).on("touchstart click", function(e){
     e.preventDefault();
     popupHide();
     bodyRemoveClass();
@@ -69,9 +69,9 @@ function popup() {
     }
   });
 
-  $("." + $popupOpen + "").on('click',function(e){
+  $("." + $popupOpen).on('click',function(e){
     e.preventDefault();
-    if ($("." + $popup + "").length) {
+    if ($("." + $popup).length) {
       popupHide();
       $($(this).attr('href')).fadeIn();
       bodyAddClass();
@@ -79,7 +79,7 @@ function popup() {
     }
   });
 
-  $("." + $popupClose + "").on('click', function(e) {
+  $("." + $popupClose).on('click', function(e) {
     e.preventDefault();
     popupHide();
     bodyRemoveClass();
