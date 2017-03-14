@@ -1,0 +1,100 @@
+body {
+    &.body-hidden {
+        overflow: hidden;
+    }
+}
+
+.popup-box {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+    display: none;
+    overflow-y: auto;
+
+    &.is-visible {
+        display: block;
+    }
+
+    &__container {
+        display: flex;
+        min-height: 100vh;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+    }
+
+    &__bg {
+        background-color: rgba(0,0,0, .3);
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.popup {
+    background: white;
+    box-shadow: 0 26px 53px 0 rgba(0,0,0, .08);
+    position: relative;
+    z-index: 5;
+    max-width: 670px;
+    width: 100%;
+    display: none;
+    padding: 20px;
+
+    .body-hidden & {
+        display: block;
+    }
+
+    &__close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        color: red;
+        font-size: 20px;
+        text-decoration: none;
+    }
+
+    #popup & {
+        h2,
+        h3 {
+            line-height: 1.6;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 22px;
+        }
+
+        h3 {
+            font-size: 18px;
+        }
+
+        p,
+        ul,
+        ol {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        ul,
+        ol {
+            margin-left: 15px;
+        }
+
+        ul {
+            list-style: disc;
+        }
+
+        ol {
+            list-style: decimal;
+        }
+    }
+}

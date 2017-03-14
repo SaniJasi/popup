@@ -1,14 +1,13 @@
 function popup() {
   var $body           = 'body',
-      $popup          = '.popup',
-      $popupItem      = '.popup__item',
-      $popupName      = 'popup',
-      $popupClose     = '.popup__close',
+      $bodyClass      = 'body-hidden',
+      $popup          = 'popup-box',
+      $popupItem      = 'popup',
+      $popupClose     = 'popup__close',
       $popupVisible   = 'is-visible',
-      $popupContainer = 'popup__container',
-      $popupBg        = 'popup__bg',
-      $popupOpen      = '.open-popup',
-      $bodyClass      = 'body-hidden';
+      $popupContainer = 'popup-box__container',
+      $popupBg        = 'popup-box__bg',
+      $popupOpen      = 'popup-open';
 
   function bodyAddClass() {
     $($body).addClass($bodyClass);
@@ -19,15 +18,15 @@ function popup() {
   }
 
   function bodyRemoveStyle() {
-    $($body).removeClass($bodyClass);
+    $($body).removeAttr('style');
   }
 
   function popupHide() {
-    $($popup).fadeOut();
+    $("." + $popup + "").fadeOut();
   }
 
   function closePopup() {
-    $($popupClose).trigger('click');
+    $("." + $popupClose + "").trigger('click');
   }
 
   function getScrollbarWidth() {
@@ -39,21 +38,22 @@ function popup() {
     return scrollbarSize;
   }
 
-  $($popupItem).each(function(){
+  $("." + $popupItem + "").each(function(){
     var $this = $(this);
-    if ($this.hasClass($popupVisible)) {
-      $this.wrap('<div class="'$popupName + ' ' + $popupVisible'"><div class="'$popupContainer'">');
+    if ($this.hasClass("." + $popupVisible + "")) {
+      $this.wrap('<div class="'+ $popup + ' ' + $popupVisible +'"><div class="'+ $popupContainer +'">');
       bodyAddClass();
-      $this.removeClass($popupVisible);
+      $this.removeClass("." + $popupVisible + "");
     } else {
-      $this.wrap('<div class="'$popupName'"><div class="'$popup__container'">');
+      $this.wrap('<div class="'+ $popup +'"><div class="'+ $popupContainer +'">');
     }
-    $this.after('<div class="'$popupBg'">')
-    $this.parents($popup).attr('id',$this.attr('id'));
+    $this.after('<div class="'+ $popupBg +'">')
+    $this.parents("." + $popup + "").attr('id',$this.attr('id'));
     $this.removeAttr('id');
+    console.log('init popop');
   });
 
-  $("."$popupBg"").on("touchstart click", function(e){
+  $("." + $popupBg + "").on("touchstart click", function(e){
     e.preventDefault();
     popupHide();
     bodyRemoveClass();
@@ -69,9 +69,9 @@ function popup() {
     }
   });
 
-  $($popupOpen).on('click',function(e){
+  $("." + $popupOpen + "").on('click',function(e){
     e.preventDefault();
-    if ($($popup).length) {
+    if ($("." + $popup + "").length) {
       popupHide();
       $($(this).attr('href')).fadeIn();
       bodyAddClass();
@@ -79,10 +79,10 @@ function popup() {
     }
   });
 
-  $($popupClose).on('click', function() {
+  $("." + $popupClose + "").on('click', function(e) {
+    e.preventDefault();
     popupHide();
     bodyRemoveClass();
     bodyRemoveStyle();
-    return false;
   });
 }
