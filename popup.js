@@ -85,6 +85,4 @@ function popup() {
     bodyRemoveStyle();
     return false;
   });
-
-  $('.offers__links').clone().appendTo($popupItem);
 }
